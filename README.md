@@ -49,3 +49,8 @@ If you are developing a production application, we recommend using TypeScript wi
 # test webhook
 # test webhook 2
 # test webhook 2
+
+
+## 💬 Community
+
+- **Telegram Channel**: [@myzubster](https://t.me/myzubster) – follow for updates, news, and discussions about the MyZubster ecosystem.
