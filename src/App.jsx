@@ -1,28 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contribute from './pages/Contribute';
-import Map from './pages/Map';
-import NFT from './pages/NFT';
-import Dashboard from './pages/Dashboard';
-import Navbar from './components/Layout/Navbar';
-import Footer from './components/Layout/Footer';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
+import Orders from './pages/Orders';
+import Payments from './pages/Payments';
+import Profile from './pages/Profile';
+import Webhooks from './pages/Webhooks';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/nft" element={<NFT />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/orders" replace />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="payments" element={<Payments />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="webhooks" element={<Webhooks />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
