@@ -32,6 +32,12 @@ function Home() {
         </div>
       </section>
 
+      <section className="nft-cta">
+        <h2>🌟 Discover NFTs</h2>
+        <p>Earn digital certificates for your contributions. Every plant mapped, seed exchanged, or verification made can earn you a unique NFT.</p>
+        <Link to="/nft" className="btn btn-primary">Explore NFTs</Link>
+      </section>
+
       <section className="recent-activity">
         <h2>📈 Recent Activity</h2>
         <RecentActivity />
