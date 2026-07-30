@@ -18,19 +18,21 @@ function GardenDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const API_URL = import.meta.env.VITE_API_URL || '/api';
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
       try {
         // 1. Recupera le statistiche aggregate
-        const statsRes = await axios.get(`/api/garden/${gardenId}/stats`);
+        const statsRes = await axios.get(`${API_URL}/garden/${gardenId}/stats`);
         setStats(statsRes.data.stats);
 
         // 2. Recupera la cronologia (es. ultimi 20 record)
         // Nota: se non esiste un endpoint per la cronologia, possiamo saltare questo passo.
         // Per ora usiamo dati fittizi per testare il grafico.
-        const historyRes = await axios.get(`/api/garden/${gardenId}/history?limit=20`);
+        const historyRes = await axios.get(`${API_URL}/garden/${gardenId}/history?limit=20`);
         setHistory(historyRes.data || []);
       } catch (err) {
         console.error('Errore caricamento dati orto:', err);
@@ -41,7 +43,7 @@ function GardenDashboard() {
     };
 
     fetchData();
-  }, [gardenId]);
+  }, [gardenId, API_URL]);
 
   if (loading) return <div className="loading">Caricamento dati dell’orto...</div>;
   if (error) return <div className="error">{error}</div>;
