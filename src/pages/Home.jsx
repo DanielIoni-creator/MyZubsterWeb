@@ -38,6 +38,12 @@ function Home() {
         <Link to="/nft" className="btn btn-primary">Explore NFTs</Link>
       </section>
 
+      <section className="dashboard-cta">
+        <h2>📊 Monitor Your Garden</h2>
+        <p>Track pH, EC, temperature, and humidity of your urban garden in real time.</p>
+        <Link to="/dashboard" className="btn btn-secondary">Go to Dashboard</Link>
+      </section>
+
       <section className="recent-activity">
         <h2>📈 Recent Activity</h2>
         <RecentActivity />
