@@ -1,5 +1,8 @@
 > **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
 
+[![GitHub issues](https://img.shields.io/github/issues/DanielIoni-creator/MyZubsterWeb)](https://github.com/DanielIoni-creator/MyZubsterWeb/issues)
+
+
 > **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
 
 > **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
