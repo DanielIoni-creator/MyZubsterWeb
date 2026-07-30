@@ -4,6 +4,7 @@ import About from './pages/About';
 import Contribute from './pages/Contribute';
 import Map from './pages/Map';
 import NFT from './pages/NFT';
+import Dashboard from './pages/Dashboard';
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/map" element={<Map />} />
           <Route path="/nft" element={<NFT />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </main>
       <Footer />
