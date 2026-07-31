@@ -1,29 +1,44 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+// Importa i componenti legali
+import LegalDocument from './components/legal/LegalDocument';
+import LegalFooter from './components/legal/LegalFooter';
+import CookieBanner from './components/legal/CookieBanner';
+
+// Importa gli altri componenti (esistenti)
 import Home from './pages/Home';
-import About from './pages/About';
-import Contribute from './pages/Contribute';
-import Map from './pages/Map';
-import NFT from './pages/NFT';
 import Dashboard from './pages/Dashboard';
-import Navbar from './components/Layout/Navbar';
-import Footer from './components/Layout/Footer';
+import Orders from './pages/Orders';
+import Profile from './pages/Profile';
+import Payments from './pages/Payments';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/nft" element={<NFT />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+    <Router>
+      <div className="App">
+        <CookieBanner />
+        
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/payments" element={<Payments />} />
+            
+            {/* Route per i documenti legali */}
+            <Route path="/legal/:doc" element={<LegalDocument />} />
+            <Route path="/terms" element={<LegalDocument />} />
+            <Route path="/privacy" element={<LegalDocument />} />
+            <Route path="/cookies" element={<LegalDocument />} />
+          </Routes>
+        </main>
+        
+        <LegalFooter />
+      </div>
+    </Router>
   );
 }
 
