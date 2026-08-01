@@ -1,61 +1,37 @@
-> **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
+Frontend web interface for the MyZubster ecosystem.
 
-> **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
+## Features
 
-> **Part of the [MyZubster ecosystem](https://github.com/MyZubster-Ecosystem)**
+- 🔐 Authentication (Login/Register)
+- 🌍 Interactive Global Map
+- 🐾 Animal Registry
+- 🌿 Plant Registry
+- 💰 Monero Payments
+- 🏆 Bounty System
 
-# React + Vite
+## Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+- **Framework:** Next.js 14
+- **Styling:** Tailwind CSS + shadcn/ui
+- **Maps:** Leaflet/Mapbox
+- **API:** REST + WebSocket
+- **Auth:** JWT
+- **Deploy:** Vercel
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+git clone https://github.com/MyZubster-Ecosystem/MyZubsterWeb.git
+cd MyZubsterWeb
+npm install
+npm run dev
 
-## React Compiler
+Environment Variables
+env
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+NEXT_PUBLIC_API_URL=http://localhost:10000
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token
 
-## Expanding the Oxlint configuration
+License
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-
-## 🌐 Ecosystem Hub
-
-**MyZubster Ecosystem**: https://github.com/MyZubster-Ecosystem
-
-## 🌐 Ecosystem Hub
-
-**MyZubster Ecosystem**: https://github.com/MyZubster-Ecosystem
-
-## 🌐 Ecosystem Hub
-
-**MyZubster Ecosystem**: https://github.com/MyZubster-Ecosystem
-
-
-## 💬 Community
-
-- **Telegram**: [@MyZubster_bot](https://t.me/MyZubster_bot) – for updates, support, and discussions.
-
-
-## 🌐 Connect with Us
-
-- **Telegram**: [@MyZubster_bot](https://t.me/MyZubster_bot) – updates, support, and discussions
-- **Twitter / X**: [@DanielIoni](https://twitter.com/DanielIoni) – project announcements and thoughts
-- **TikTok**: [@danielioni](https://tiktok.com/@danielioni) – behind the scenes and project updates
-- **Instagram**: [@danielioni](https://instagram.com/danielioni) – visuals and community stories
-- **dev.to**: [Daniel Ioni](https://dev.to/danielioni) – technical articles and project updates
-# test webhook
-# test webhook 2
-# test webhook 2
-
-
-## 💬 Community
-
-- **Telegram Channel**: [@myzubster](https://t.me/myzubster) – follow for updates, news, and discussions about the MyZubster ecosystem.
-# Un vero commit per testare il webhook
-# test webhook
-# test webhook
-
-
+MIT
