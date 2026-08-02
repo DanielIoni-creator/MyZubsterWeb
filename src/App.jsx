@@ -7,6 +7,8 @@ import NFT from './pages/NFT';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
+import BountySystem from './components/BountySystem';
+import GlobalMap from './components/GlobalMap';
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contribute" element={<Contribute />} />
-          <Route path="/map" element={<Map />} />
+          <Route path="/map" element={<GlobalMap />} />
+          <Route path="/bounty" element={<BountySystem />} />
           <Route path="/nft" element={<NFT />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
