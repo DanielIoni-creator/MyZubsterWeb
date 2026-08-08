@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "robotTotali": 50,
+    "robotAttivi": 47,
+    "ortiUrbani": 13,
+    "comuniAttivi": 10,
+    "xmrGuadagnati": 0.18,
+    "myzGuadagnati": 12500,
+    "bountyTotali": 48,
+    "bountyCompletati": 15,
+    "contributors": 8,
+    "socialBounties": 20,
+    "quantumReady": true,
+    "lastUpdate": "2026-08-08T16:30:00Z"
+  },
+  "bounties": {
+    "totalReward": 1680,
+    "categories": {
+      "social": 20,
+      "robot": 11,
+      "quantum": 1,
+      "lunar": 10,
+      "mars": 10,
+      "garden": 6
+    }
+  },
+  "quantum": {
+    "status": "active",
+    "qkdProtocol": "BB84",
+    "wallets": 2,
+    "transactions": 1,
+    "securityLevel": "quantum-resistant"
+  },
+  "social": {
+    "platforms": ["twitter", "discord", "telegram", "youtube", "instagram", "linkedin", "reddit", "tiktok", "facebook", "github"],
+    "totalIssues": 20,
+    "totalReward": 1680
+  }
+}
