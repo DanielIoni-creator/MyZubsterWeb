@@ -1,45 +1,61 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import viteLogo from './assets/vite.svg';
+import Stats from './components/Stats';
+import { OrdersView } from './components/OrdersView.jsx';
+import { PaymentView } from './components/PaymentView.jsx';
+import { ProfileView } from './components/ProfileView.jsx';
 import './App.css';
 
-// Importa i componenti legali
-import LegalDocument from './components/legal/LegalDocument';
-import LegalFooter from './components/legal/LegalFooter';
-import CookieBanner from './components/legal/CookieBanner';
-
-// Importa gli altri componenti (esistenti)
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import Orders from './pages/Orders';
-import Profile from './pages/Profile';
-import Payments from './pages/Payments';
-
-function App() {
+// Preserves maintainer's landing page (Stats) while wiring the marketplace
+// routes added for issue #2 (orders, payments, profile + webhook wiring).
+function Home() {
+  const [count, setCount] = useState(0);
   return (
-    <Router>
-      <div className="App">
-        <CookieBanner />
-        
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/payments" element={<Payments />} />
-            
-            {/* Route per i documenti legali */}
-            <Route path="/legal/:doc" element={<LegalDocument />} />
-            <Route path="/terms" element={<LegalDocument />} />
-            <Route path="/privacy" element={<LegalDocument />} />
-            <Route path="/cookies" element={<LegalDocument />} />
-          </Routes>
-        </main>
-        
-        <LegalFooter />
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank" rel="noreferrer noopener">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer noopener">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-    </Router>
+      <h1>MyZubster Ecosystem</h1>
+      <Stats />
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <div className="app-shell">
+      <nav className="app-nav" aria-label="Main navigation">
+        <NavLink to="/" className="nav-link" end>Home</NavLink>
+        <NavLink to="/orders" className="nav-link">Orders</NavLink>
+        <NavLink to="/payments" className="nav-link">Payments</NavLink>
+        <NavLink to="/profile" className="nav-link">Profile</NavLink>
+      </nav>
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/orders" element={<OrdersView />} />
+          <Route path="/payments" element={<PaymentView />} />
+          <Route path="/profile" element={<ProfileView />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
