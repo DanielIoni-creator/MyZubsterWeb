@@ -10,7 +10,7 @@ describe('store reducer', () => {
   it('clears error and sets loading false', () => {
     const before = { ...initialState, loading: true, error: 'bad' };
     const s = reducer(before, { type: 'SET_ERROR', error: null });
-    expect(s.error).toBeUndefined();
+    expect(s.error).toBeNull();
     expect(s.loading).toBe(false);
   });
 

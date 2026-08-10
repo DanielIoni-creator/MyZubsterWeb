@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useCallback } from 'react';
+import { createContext, createElement, useContext, useReducer, useCallback } from 'react';
 import * as ordersApi from '../api/orders.js';
 import * as paymentsApi from '../api/payments.js';
 import * as usersApi from '../api/users.js';
@@ -126,7 +126,7 @@ export function StoreProvider({ children }) {
     },
   };
 
-  return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;
+  return createElement(StoreContext.Provider, { value }, children);
 }
 
 export function useStore() {
