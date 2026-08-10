@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 const LegalDocument = () => {
   const { doc } = useParams();
+  const location = useLocation();
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +22,8 @@ const LegalDocument = () => {
       'crypto': 'CRYPTO_TRANSACTION_TERMS.md'
     };
 
-    const fileName = docMap[doc];
+    const key = doc || location.pathname.replace(/^\/legal\//, '/').replace(/^\//, '');
+    const fileName = docMap[key];
     if (fileName) {
       fetch(`/legal/${fileName}`)
         .then(res => res.text())
@@ -31,9 +33,10 @@ const LegalDocument = () => {
         })
         .catch(() => setLoading(false));
     } else {
+      setContent('');
       setLoading(false);
     }
-  }, [doc]);
+  }, [doc, location.pathname]);
 
   if (loading) {
     return <div className="loading">Loading document...</div>;
