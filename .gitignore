@@ -6,3 +6,8 @@ dist/
 *.log
 .vercel
 .env*
+# Repository esterni
+myzubster-animal-registry/
+myzubster-docs/
+myzubster-space-station/
+tari/

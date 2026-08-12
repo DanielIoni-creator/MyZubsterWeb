@@ -6,6 +6,7 @@ import Stats from './components/Stats';
 import { OrdersView } from './components/OrdersView.jsx';
 import { PaymentView } from './components/PaymentView.jsx';
 import { ProfileView } from './components/ProfileView.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
 import './App.css';
 
 // Preserves maintainer's landing page (Stats) while wiring the marketplace
@@ -47,6 +48,7 @@ export default function App() {
         <NavLink to="/orders" className="nav-link">Orders</NavLink>
         <NavLink to="/payments" className="nav-link">Payments</NavLink>
         <NavLink to="/profile" className="nav-link">Profile</NavLink>
+        <NavLink to="/admin" className="nav-link">Admin</NavLink>
       </nav>
       <main className="app-main">
         <Routes>
@@ -54,6 +56,7 @@ export default function App() {
           <Route path="/orders" element={<OrdersView />} />
           <Route path="/payments" element={<PaymentView />} />
           <Route path="/profile" element={<ProfileView />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </main>
     </div>

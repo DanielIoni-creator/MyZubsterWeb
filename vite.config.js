@@ -13,7 +13,15 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
+<<<<<<< HEAD
       input: htmlEntries,
+=======
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        taz: resolve(import.meta.dirname, 'taz.html'),
+        admin: resolve(import.meta.dirname, 'admin.html'),
+      },
+>>>>>>> origin/main
     },
   },
   test: {
