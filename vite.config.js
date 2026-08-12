@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         taz: resolve(import.meta.dirname, 'taz.html'),
+        admin: resolve(import.meta.dirname, 'admin.html'),
       },
     },
   },
